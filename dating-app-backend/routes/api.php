@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,10 @@ use App\Http\Controllers\UserController;
 Route::group(['middleware' => 'api'], function($router) {
     Route::group(['prefix' => 'v0.0.1'], function () {
         Route::group(['prefix' => 'auth'], function () {
-            Route::post('/login', [JWTController::class, "login"]);
-            Route::post('/register', [JWTController::class, "register"]);
-            Route::post('/forgotpassword', [JWTController::class, "forgotpassword"]);
-            Route::post('/addimage/{id}', [JWTController::class, "addimage"]);
+            Route::post('/login', [userscontroller::class, "login"]);
+            Route::post('/register', [userscontroller::class, "register"]);
+            Route::post('/forgotpassword', [userscontroller::class, "forgotpassword"]);
+            Route::post('/addimage/{id}', [userscontroller::class, "addimage"]);
           
         });
     });
