@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'api'], function($router) {
+    Route::group(['prefix' => 'v0.0.1'], function () {
+        Route::group(['prefix' => 'auth'], function () {
+            Route::post('/login', [JWTController::class, "login"]);
+            Route::post('/register', [JWTController::class, "register"]);
+            Route::post('/forgotpassword', [JWTController::class, "forgotpassword"]);
+            Route::post('/addimage/{id}', [JWTController::class, "addimage"]);
+          
+        });
+    });
 });
