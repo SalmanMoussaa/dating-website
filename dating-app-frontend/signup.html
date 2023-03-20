@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/signup.css" />
+    <title>Sign-Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign Up</h1>
+      <form action="signin.html" method="post" id="signup-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required />
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required />
+          </div>
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" required />
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio:</label>
+            <input type="text" name="bio" id="bio" required />
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required />
+          </div>
+          <label for="gender">Gender:</label>
+          <div class="gender-buttons">
+            <label class="btn btn-primary active">
+              <input
+                value="0"
+                type="radio"
+                name="gender"
+                id="male"
+                autocomplete="off"
+              />
+              Male
+            </label>
+            <label class="btn btn-primary">
+              <input
+                checked
+                value="1"
+                type="radio"
+                name="gender"
+                id="female"
+                autocomplete="off"
+              />
+              Female
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="profile-pic">Upload Picture:</label>
+          <input
+            type="file"
+            name="profile-pic"
+            id="profile_pic"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="signin_link" id="signin_link">
+        <p>Already have an account?</p>
+        <a href="#">Login</a>
+      </div>
+    </div>
+   
+    <script src="index.js"></script>
+  
+  </body>
+</html>
+<!DOCTYPE html>
+<html></html>
