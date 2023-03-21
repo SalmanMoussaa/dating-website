@@ -76,33 +76,31 @@ class userscontroller extends Controller
      */
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required|string|min:6',
-
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
         ]);
+        $credentials = $request->only('email', 'password');
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+        $token = Auth::attempt($credentials);
+        if (!$token) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Unauthorized',
+            ], 401);
         }
 
-        if (!$token = auth()->attempt($validator->validated())) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
-        $user_id = auth()->user()->id;
-        return $this->respondWithTokenAndId($token, $user_id);
+        $user = Auth::user();
+        return response()->json([
+                'status' => 'success',
+                'user' => $user,
+                'authorisation' => [
+                    'token' => $token,
+                    'type' => 'bearer',
+                ]
+            ]);
+
     }
-
-    private function respondWithTokenAndId($token, $user_id)
-{
-    return response()->json([
-        'access_token' => $token,
-        'token_type' => 'bearer',
-        'user_id' => $user_id,
-    ]);
-}
-
-
 
     /**
      * Logout user
