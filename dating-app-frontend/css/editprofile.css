@@ -1,10 +1,13 @@
 /* Global styles */
 
 body {
-  font-family: "Open Sans", sans-serif;
+  
   color: #333;
-  background-color: #f7f7f7;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
   margin: 0;
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,7 +25,7 @@ button {
   background-color: #ff3b3f;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -30,7 +33,7 @@ button {
 /* Header */
 
 .nav_container {
-  background-color: #fff;
+  background-color: palevioletred ;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
