@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./css/userslist.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main_container">
+      <nav>
+        <div class="logo">
+          <img src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="search-container">
+          <div class="input-container">
+            <input
+              class="search"
+              id="search"
+              type="text"
+              placeholder="Search"
+              autocomplete="off"
+            />
+          </div>
+          <img
+            src="assets/search-icon.png"
+            class="search_icon"
+            id="search_icon"
+            alt="search icon"
+          />
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li><a href="users_list.html">Home</a></li>
+            <li><a href="favotites.html">Liked</a></li>
+            <li><a href="blocked-users.html">Blocked</a></li>
+            <li><a href="#">Chat</a></li>
+          </ul>
+        </div>
+        <button class="account_button" type="button" id="accountButton">
+          Account
+        </button>
+      </nav>
+
+      <div class="main_content">
+        <div class="filter_container">
+          <h2>Filter By</h2>
+          <div class="age_container">
+            <label for="age">Age:</label>
+            <select id="age">
+              <option value="" selected>Select age range</option>
+              <option value="18to22">18 to 22</option>
+              <option value="22to25">22 to 25</option>
+              <option value="25to36">25 to 36</option>
+              <option value="36to50">36 to 50</option>
+              <option value="over50">Over 50</option>
+            </select>
+          </div>
+          <br />
+          <div class="location_container">
+            <label for="location">Location:</label>
+            <select id="location">
+              <option value="" selected>Select location</option>
+              <option value="beirut">Beirut</option>
+              <option value="trablos">Trablos</option>
+              <option value="Lebanon">Lebanon</option>
+              <option value="batroun">Batroun</option>
+            </select>
+          </div>
+        </div>
+        <div class="cards_container" id="cards_container"></div>
+
+        <div id="chats_container" class="chats_container hide"></div>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+      dating_pages.loadFor("userslist");
+    </script>
+  </body>
+</html>

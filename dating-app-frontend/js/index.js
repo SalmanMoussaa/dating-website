@@ -97,4 +97,18 @@ dating_pages.load_signup = async () => {
     });
   };
   
-  
+  const search = document.getElementById("search");
+  const user_cards = document.querySelectorAll(".user_card");
+  console.log(user_cards);
+  search.addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase();
+    console.log(value);
+
+    filteredData = users_data.filter((user) =>
+      user.name.toLowerCase().includes(value)
+    );
+
+    console.log(filteredData);
+
+    usersLoader(filteredData, cards_container);
+  });
