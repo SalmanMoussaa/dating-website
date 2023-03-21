@@ -8,13 +8,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ef0606;
+    background-color: #ed72d4;
     padding: 10px 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
+    color: #000000;
   }
   
   .logo img {
@@ -38,6 +39,7 @@
     cursor: pointer;
     transition: 300ms all;
     user-select: none;
+    
   }
   .account_button:hover {
     background: #de4040;
@@ -98,8 +100,7 @@
   .search-icon {
     position: absolute;
     left: 0.5rem;
-    width: fit-content;
-    height:fit-content;
+    
   }
   .search-container {
     transform: translateX(-50%);

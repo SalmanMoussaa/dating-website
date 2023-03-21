@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix' => 'api'], function() {
+    Route::post('/register', 'UserController@register');
+    Route::post('/login', 'UserController@login');
+});

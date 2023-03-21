@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/editprofile.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>profile Uplaod</title>
+  </head>
+  <body>
+    <div class="nav_container">
+      <nav>
+        <div class="logo_container">
+          <h2 class="logo">Persona <span> Mate</span></h2>
+        </div>
+        <div class="links_container">
+          <ul>
+            <li><a href="list_users.html">Home</a></li>
+            <li><a href="profileedit.html">Profile</a></li>
+          </ul>
+          <button type="button">Logout</button>
+        </div>
+      </nav>
+    </div>
+
+    <div>
+      <h2>Optional images</h2>
+    </div>
+    <div class="optional">
+      <div class="card" id="pic1">
+        <img src="" alt="" id="image" />
+      </div>
+      <div class="card" id="pic2">
+        <img src="" alt="" id="image" />
+      </div>
+      <div class="card" id="pic3">
+        <img src="" alt="" id="image" />
+      </div>
+    </div>
+    <div>
+      <button id="upload_btn">Upload</button>
+    </div>
+    
+    <script src="index.js"></script>
+    <script>
+      dating_pages.loadFor("profile");
+    </script>
+  </body>
+</html>
