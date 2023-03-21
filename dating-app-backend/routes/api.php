@@ -26,19 +26,19 @@ Route::group(['middleware' => 'api'], function($router) {
         });
         
         Route::group(['prefix' => 'user'], function () {
-            Route::post("/upload",[UserController::class,"uploadImage"]);
-            Route::get('/user/{id}', [UserController::class, "getuser"]);
-            Route::get('/oppgender/{id}', [UserController::class, "getoppgender"]);
-            Route::post('/editprofile', [UserController::class, "editprofile"]);
-            Route::get('/messages/{sender_id}/{receiver_id}', [UserController::class, "getmessage"]);
-            Route::get('/blocks/{sender_id}/{receiver_id}', [UserController::class, "getblocks"]);
-            Route::get('/favorites/{sender_id}/{receiver_id}', [UserController::class, "getfavorites"]);
+            Route::post("/upload",[UsersController::class,"uploadImage"]);
+            Route::get('/user/{id}', [UsersController::class, "getuser"]);
+            Route::get('/oppgender/{id}', [UsersController::class, "getoppgender"]);
+            Route::post('/editprofile', [UsersController::class, "editprofile"]);
+            Route::get('/messages/{sender_id}/{receiver_id}', [UsersController::class, "getmessage"]);
+            Route::get('/blocks/{sender_id}/{receiver_id}', [UsersController::class, "getblocks"]);
+            Route::get('/favorites/{sender_id}/{receiver_id}', [UsersController::class, "getfavorites"]);
             
         });
         Route::group(['prefix' => 'actions'], function () {
-            Route::post('/likeuser/{sender_id}/{receiver_id}', [ActionController::class, "likeuser"]);
-            Route::post('/blockuser/{sender_id}/{receiver_id}', [ActionController::class, "blockuser"]);
-            Route::post('/sendmessage/{sender_id}/{receiver_id}', [ActionController::class, "sendmessage"]);        
+            Route::post('/likeuser/{sender_id}/{receiver_id}', [UsersController::class, "likeuser"]);
+            Route::post('/blockuser/{sender_id}/{receiver_id}', [UsersController::class, "blockuser"]);
+            Route::post('/sendmessage/{sender_id}/{receiver_id}', [UsersController::class, "sendmessage"]);        
         });
     
 });

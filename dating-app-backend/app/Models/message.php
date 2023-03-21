@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class blocks extends Model
+class message extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id','blocked_id'];
+    protected $fillabale=['sender_id','receiver_id','content'];
 }
